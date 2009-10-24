@@ -1,0 +1,18 @@
+<h1>Listing rankings</h1>
+
+<table>
+  <tr>
+  </tr>
+
+<% @rankings.each do |ranking| %>
+  <tr>
+    <td><%= link_to 'Show', ranking %></td>
+    <td><%= link_to 'Edit', edit_ranking_path(ranking) %></td>
+    <td><%= link_to 'Destroy', ranking, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New ranking', new_ranking_path %>
