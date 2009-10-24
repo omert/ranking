@@ -1,0 +1,10 @@
+- form_for :choice, @choice  do |f|
+  %h1
+    = f.radio_button("winner_id", @rankables[0].id.to_s)
+    = render @rankables[0]
+  %h3
+    = f.radio_button("winner_id", "0", :checked => true)
+    Don't know
+  %h1
+    = f.radio_button("winner_id", @rankables[1].id.to_s)
+    = render @rankables[1]

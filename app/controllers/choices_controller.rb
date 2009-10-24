@@ -24,12 +24,8 @@ class ChoicesController < ApplicationController
   # GET /choices/new
   # GET /choices/new.xml
   def new
+    @rankables = Movie.choose_two_at_random
     @choice = Choice.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @choice }
-    end
   end
 
   # GET /choices/1/edit

@@ -3946,3 +3946,959 @@ Migrating to AddColumnImdbLinkToMovies (20091024120732)
   [4;36;1mMovie Load (0.6ms)[0m   [0;1mSELECT `movies`.id FROM `movies` WHERE (`movies`.`imdb_link` = BINARY '/title/tt0097441/') LIMIT 1[0m
   [4;35;1mMovie Create (0.2ms)[0m   [0mINSERT INTO `movies` (`name`, `created_at`, `imdb_link`, `updated_at`) VALUES('Glory', '2009-10-24 12:15:47', '/title/tt0097441/', '2009-10-24 12:15:47')[0m
   [4;36;1mSQL (4.1ms)[0m   [0;1mCOMMIT[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mMovie Load (0.4ms)[0m   [0mSELECT * FROM `movies` LIMIT 1[0m
+  [4;36;1mMovie Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:02:41) [GET]
+  [4;35;1mMovie Load (1.2ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+
+ActionView::MissingTemplate (Missing template home/choose.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:04:44) [GET]
+  [4;35;1mMovie Load (1.3ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+
+ActionView::MissingTemplate (Missing template home/choose.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:04:48) [GET]
+  [4;35;1mMovie Load (1.8ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+
+ActionView::MissingTemplate (Missing template home/choose.erb in view path app/views):
+  
+
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:06:30) [GET]
+  [4;35;1mMovie Load (1.8ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+ERROR: compiling _run_haml_app47views47home47choose46html46haml RAISED compile error
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:1: syntax error, unexpected tASSOC, expecting kEND
+... true;;haml_temp =  :render => @choices[0];
+                              ^
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:2: syntax error, unexpected tASSOC, expecting kEND
+...false);haml_temp =  :render => @choices[1];
+                              ^
+Function body:           def _run_haml_app47views47home47choose46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;haml_temp =  :render => @choices[0];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);haml_temp =  :render => @choices[1];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/tamuz/dev/ranking/app/views/home/choose.html.haml:7:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `sass_old_process'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/sass/plugin/rails.rb:19:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:1: syntax error, unexpected tASSOC, expecting kEND
+... true;;haml_temp =  :render => @choices[0];
+                              ^
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:2: syntax error, unexpected tASSOC, expecting kEND
+...false);haml_temp =  :render => @choices[1];
+                              ^) on line #1 of app/views/home/choose.html.haml:
+1: = :render => @choices[0]
+2: = :render => @choices[1]
+
+    app/views/home/choose.html.haml:7:in `compile!'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (76.0ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:06:55) [GET]
+  [4;35;1mMovie Load (1.3ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+ERROR: compiling _run_haml_app47views47home47choose46html46haml RAISED compile error
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:1: syntax error, unexpected tASSOC, expecting kEND
+...= true;;haml_temp =  render => @choices[0];
+                              ^
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:2: syntax error, unexpected tASSOC, expecting kEND
+... false);haml_temp =  render => @choices[1];
+                              ^
+Function body:           def _run_haml_app47views47home47choose46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;;haml_temp =  render => @choices[0];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);haml_temp =  render => @choices[1];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/tamuz/dev/ranking/app/views/home/choose.html.haml:7:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `sass_old_process'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/sass/plugin/rails.rb:19:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:1: syntax error, unexpected tASSOC, expecting kEND
+...= true;;haml_temp =  render => @choices[0];
+                              ^
+/home/tamuz/dev/ranking/app/views/home/choose.html.haml:2: syntax error, unexpected tASSOC, expecting kEND
+... false);haml_temp =  render => @choices[1];
+                              ^) on line #1 of app/views/home/choose.html.haml:
+1: = render => @choices[0]
+2: = render => @choices[1]
+
+    app/views/home/choose.html.haml:7:in `compile!'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (62.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:07:14) [GET]
+  [4;35;1mMovie Load (1.3ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+  [4;36;1mMovie Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (5.9ms)
+Rendered movies/_movie (0.2ms)
+Completed in 48ms (View: 31, DB: 2) | 200 OK [http://localhost/choose]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:07:19) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+  [4;35;1mMovie Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (4.3ms)
+Rendered movies/_movie (0.2ms)
+Completed in 29ms (View: 6, DB: 3) | 200 OK [http://localhost/choose]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:07:20) [GET]
+  [4;35;1mMovie Load (1.2ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+  [4;36;1mMovie Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (3.2ms)
+Rendered movies/_movie (0.2ms)
+Completed in 114ms (View: 5, DB: 2) | 200 OK [http://localhost/choose]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:07:22) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+  [4;35;1mMovie Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (4.4ms)
+Rendered movies/_movie (0.2ms)
+Completed in 27ms (View: 6, DB: 3) | 200 OK [http://localhost/choose]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing HomeController#choose (for 127.0.0.1 at 2009-10-24 15:07:37) [GET]
+  [4;35;1mMovie Load (1.8ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+Rendering home/choose
+  [4;36;1mMovie Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (4.4ms)
+Rendered movies/_movie (0.2ms)
+Completed in 36ms (View: 16, DB: 3) | 200 OK [http://localhost/choose]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing MoviesController#edit (for 127.0.0.1 at 2009-10-24 15:12:23) [GET]
+  Parameters: {"id"=>"999"}
+  [4;36;1mMovie Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+  [4;35;1mMovie Load (0.3ms)[0m   [0mSELECT * FROM `movies` WHERE (`movies`.`id` = 999) [0m
+Rendering template within layouts/movies
+Rendering movies/edit
+Completed in 59ms (View: 45, DB: 1) | 200 OK [http://localhost/movies/999/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:16:16) [GET]
+  [4;35;1mMovie Load (1.3ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;36;1mChoice Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.[]) on line #1 of app/views/choices/new.html.haml:
+1: %h1= render @choices[0]
+2: %h1= render @choices[1]
+
+    app/views/choices/new.html.haml:1:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (70.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:16:34) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (4.8ms)
+Rendered movies/_movie (0.3ms)
+Completed in 52ms (View: 19, DB: 5) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:24:33) [GET]
+  [4;36;1mMovie Load (1.3ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+ERROR: compiling _run_haml_app47views47choices47new46html46haml RAISED compile error
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:11: syntax error, unexpected kENSURE, expecting kEND
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:13: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47choices47new46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;; form_for :choice, @choice  do |f|;
+
+_hamlout.push_text("<form>\n  ", false, 1);haml_temp =  f.radio_button("user", "receive_newsletter", "yes");
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+
+_hamlout.push_text("</form>\n<h1>\n  ");haml_temp =  render @rankables[0];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+_hamlout.push_text("</h1>\n<h1>\n  ");haml_temp =  render @rankables[1];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+_hamlout.push_text("</h1>\n", false, -1);@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/tamuz/dev/ranking/app/views/choices/new.html.haml:13:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `sass_old_process'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/sass/plugin/rails.rb:19:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:11: syntax error, unexpected kENSURE, expecting kEND
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:13: syntax error, unexpected $end, expecting kEND) on line #11 of app/views/choices/new.html.haml:
+8:   = render @rankables[1]
+
+    app/views/choices/new.html.haml:13:in `compile!'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (66.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:24:56) [GET]
+  [4;35;1mMovie Load (1.8ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;36;1mChoice Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+
+ActionView::TemplateError (undefined method `merge' for "yes":String) on line #2 of app/views/choices/new.html.haml:
+1: - form_for :choice, @choice  do |f|
+2:   = f.radio_button("user", "receive_newsletter", "yes")
+3:   = f.radio_button("user", "receive_newsletter", "no")
+4: 
+5: %h1
+
+    app/views/choices/new.html.haml:2:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `call'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `form_for'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `call'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `haml_bind_proc'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/choices/new.html.haml:1:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (157.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:30:19) [GET]
+  [4;36;1mMovie Load (1.2ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/choices/new.html.haml:
+1: - form_for :choice, @choice  do |f|
+2:   = f.radio_button("winner_id", @rankable_1.id)
+3:   = f.radio_button("winner_id", @rankable_2.id)
+4: 
+5: %h1
+
+    app/views/choices/new.html.haml:2:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `call'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `form_for'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `call'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `haml_bind_proc'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/choices/new.html.haml:1:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (78.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:30:32) [GET]
+  [4;35;1mMovie Load (1.8ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;36;1mChoice Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #2 of app/views/choices/new.html.haml:
+1: - form_for :choice, @choice  do |f|
+2:   = f.radio_button("choice", "winner_id", @rankable_1.id)
+3:   = f.radio_button("choice", "winner_id", @rankable_2.id)
+4: 
+5: %h1
+
+    app/views/choices/new.html.haml:2:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `call'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `form_for'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `call'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `haml_bind_proc'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/choices/new.html.haml:1:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (77.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:30:56) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+
+ActionView::TemplateError (undefined method `merge' for 945:Fixnum) on line #2 of app/views/choices/new.html.haml:
+1: - form_for :choice, @choice  do |f|
+2:   = f.radio_button("choice", "winner_id", @rankables[0].id)
+3:   = f.radio_button("choice", "winner_id", @rankables[1].id)
+4: 
+5: %h1
+
+    app/views/choices/new.html.haml:2:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `call'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `form_for'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `call'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `haml_bind_proc'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/choices/new.html.haml:1:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (161.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:31:07) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+
+ActionView::TemplateError (undefined method `merge' for "990":String) on line #2 of app/views/choices/new.html.haml:
+1: - form_for :choice, @choice  do |f|
+2:   = f.radio_button("choice", "winner_id", @rankables[0].id.to_s)
+3:   = f.radio_button("choice", "winner_id", @rankables[1].id.to_s)
+4: 
+5: %h1
+
+    app/views/choices/new.html.haml:2:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `call'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:165:in `form_for'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `call'
+    haml (2.0.9) lib/haml/helpers.rb:447:in `haml_bind_proc'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:171:in `form_for'
+    app/views/choices/new.html.haml:1:in `_run_haml_app47views47choices47new46html46haml'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (78.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:31:39) [GET]
+  [4;36;1mMovie Load (1.2ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (1.3ms)
+Rendered movies/_movie (0.1ms)
+Completed in 38ms (View: 16, DB: 4) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:32:01) [GET]
+  [4;36;1mMovie Load (1.2ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (1.4ms)
+Rendered movies/_movie (0.2ms)
+Completed in 40ms (View: 18, DB: 4) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:32:21) [GET]
+  [4;36;1mMovie Load (1.2ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (1.3ms)
+Rendered movies/_movie (0.1ms)
+Completed in 39ms (View: 17, DB: 4) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:33:23) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+ERROR: compiling _run_haml_app47views47choices47new46html46haml RAISED compile error
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: unterminated string meets end of file
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47choices47new46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;; form_for :choice, @choice  do |f|;
+
+_hamlout.push_text("<h1>\n  ", false, 1);haml_temp =  f.radio_button("winner_id", @rankables[0].id.to_s);
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("  ");haml_temp =  render @rankables[0];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+_hamlout.push_text("</h1>\n<h1>\n  ");haml_temp =  f.radio_button("winner_id", 0);
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("  ");haml_temp =  Don't know;
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+_hamlout.push_text("</h1>\n<h1>\n  ");haml_temp =  f.radio_button("winner_id", @rankables[1].id.to_s);
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("  ");haml_temp =  render @rankables[1];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("</h1>\n", false, -1);end;
+@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/tamuz/dev/ranking/app/views/choices/new.html.haml:7:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `sass_old_process'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/sass/plugin/rails.rb:19:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: unterminated string meets end of file
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: syntax error, unexpected $end, expecting kEND) on line #7 of app/views/choices/new.html.haml:
+4:     = render @rankables[0]
+5:   %h1
+6:     = f.radio_button("winner_id", 0)
+7:     = Don't know
+8:   %h1
+9:     = f.radio_button("winner_id", @rankables[1].id.to_s)
+10:     = render @rankables[1]
+
+    app/views/choices/new.html.haml:7:in `compile!'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (67.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:33:35) [GET]
+  [4;35;1mMovie Load (1.2ms)[0m   [0mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;36;1mChoice Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+ERROR: compiling _run_haml_app47views47choices47new46html46haml RAISED compile error
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: unterminated string meets end of file
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: syntax error, unexpected $end, expecting kEND
+Function body:           def _run_haml_app47views47choices47new46html46haml(local_assigns)
+            old_output_buffer = output_buffer;;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:format=>:xhtml, :attr_wrapper=>"'", :autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :ugly=>false, :preserve=>["textarea", "pre"]});_erbout = _hamlout.buffer;__in_erb_template = true;; form_for :choice, @choice  do |f|;
+
+_hamlout.push_text("<h1>\n  ", false, 1);haml_temp =  f.radio_button("winner_id", @rankables[0].id.to_s);
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("  ");haml_temp =  render @rankables[0];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+_hamlout.push_text("</h1>\n<h1>\n  ");haml_temp =  f.radio_button("winner_id", 0);
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("  ");haml_temp =  Don't know;
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);
+_hamlout.push_text("</h1>\n<h1>\n  ");haml_temp =  f.radio_button("winner_id", @rankables[1].id.to_s);
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("  ");haml_temp =  render @rankables[1];
+haml_temp = _hamlout.push_script(haml_temp, false, false, false, false, false);_hamlout.push_text("</h1>\n", false, -1);end;
+@haml_buffer = @haml_buffer.upper;_erbout;
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /home/tamuz/dev/ranking/app/views/choices/new.html.haml:7:in `compile!'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:343:in `_render_with_layout'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:257:in `render_without_haml'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/haml/helpers/action_view_mods.rb:14:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/usr/lib/ruby/gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `sass_old_process'
+/usr/lib/ruby/gems/1.8/gems/haml-2.0.9/lib/sass/plugin/rails.rb:19:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/usr/lib/ruby/gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+/usr/lib/ruby/gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/usr/lib/ruby/gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/usr/local/lib/site_ruby/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: unterminated string meets end of file
+/home/tamuz/dev/ranking/app/views/choices/new.html.haml:7: syntax error, unexpected $end, expecting kEND) on line #7 of app/views/choices/new.html.haml:
+4:     = render @rankables[0]
+5:   %h1
+6:     = f.radio_button("winner_id", 0)
+7:     = Don't know
+8:   %h1
+9:     = f.radio_button("winner_id", @rankables[1].id.to_s)
+10:     = render @rankables[1]
+
+    app/views/choices/new.html.haml:7:in `compile!'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/haml/helpers/action_view_mods.rb:14:in `render'
+    haml (2.0.9) lib/sass/plugin/rails.rb:19:in `process'
+
+Rendered rescues/_trace (66.5ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:34:01) [GET]
+  [4;36;1mMovie Load (1.7ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (1.9ms)
+Rendered movies/_movie (0.2ms)
+Completed in 57ms (View: 25, DB: 5) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:34:09) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (1.9ms)
+Rendered movies/_movie (0.2ms)
+Completed in 46ms (View: 15, DB: 5) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:34:16) [GET]
+  [4;36;1mMovie Load (1.2ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (1.4ms)
+Rendered movies/_movie (0.1ms)
+Completed in 41ms (View: 19, DB: 4) | 200 OK [http://localhost/choices/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ChoicesController#new (for 127.0.0.1 at 2009-10-24 15:34:48) [GET]
+  [4;36;1mMovie Load (1.8ms)[0m   [0;1mSELECT * FROM `movies` ORDER BY rand() LIMIT 2[0m
+  [4;35;1mChoice Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `choices`[0m
+Rendering template within layouts/choices
+Rendering choices/new
+  [4;36;1mMovie Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `movies`[0m
+Rendered movies/_movie (2.0ms)
+Rendered movies/_movie (0.2ms)
+Completed in 67ms (View: 29, DB: 5) | 200 OK [http://localhost/choices/new]
